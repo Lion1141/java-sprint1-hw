@@ -17,8 +17,9 @@ class MonthData {
         for (int i = 0; i < days.length; i++) {
             if (days[i] > maxSteps) {
                 maxSteps = days[i];
+                System.out.println("Максимальное количество шагов - " + maxSteps + " было пройдено в день " + (i+1));
             } else {
-                System.out.println("Максимальное количество шагов - " + maxSteps + " было пройдено в день " + i);
+                break;
             }
 
             // поиск максимального элемента

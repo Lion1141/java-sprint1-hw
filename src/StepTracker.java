@@ -14,7 +14,7 @@ class StepTracker {
         }
     }
 
-    void addNewNumberStepsPerDay() { //МЕТОД НЕ СОХРАНЯЕТ ШАГИ
+    void addNewNumberStepsPerDay() {
         System.out.println("Введите номер месяца");
         int Month = scanner.nextInt();
         while (true) {
@@ -67,7 +67,6 @@ class StepTracker {
 
     void printStatistics() {
         System.out.println("Введите число месяца");
-        monthData = new MonthData();
         int Month = scanner.nextInt();
         while (true) {
             if (Month > 12 || Month < 0) { // ввод и проверка номера месяца
@@ -77,6 +76,7 @@ class StepTracker {
             }
 
         }
+        monthData = monthToData[Month-1];
         int sumSteps = monthData.sumStepsFromMonth();
         System.out.println("Статистика по дням: ");
         monthData.printDaysAndStepsFromMonth();
