@@ -11,16 +11,22 @@ class Main {
             printMenu();
 
             int i = scanner.nextInt();
-            switch (i) {
-                case 1 -> stepTracker.addNewNumberStepsPerDay();
-                case 2 -> stepTracker.changeStepGoal();
-                case 3 -> stepTracker.printStatistics();
-                case 0 -> {
+            switch (i){
+                case 1:
+                    stepTracker.addNewNumberStepsPerDay();
+                    break;
+                case 2:
+                    stepTracker.changeStepGoal();
+                    break;
+                case 3:
+                    stepTracker.printStatistics();
+                    break;
+                case 0:
                     System.out.println("Пока!");
                     scanner.close();
                     return;
-                }
-                default -> System.out.println("Такой команды нет");
+                default:
+                    System.out.println("Такой команды нет");
             }
             }
         }
