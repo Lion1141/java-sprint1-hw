@@ -6,28 +6,24 @@ class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
-        Converter converter = new Converter();
 
         while (true) {
             printMenu();
 
             int i = scanner.nextInt();
-            if (i == 1) {
-                stepTracker.addNewNumberStepsPerDay();
-                // здесь будет логика команды 1
-            } else if (i == 2) {
-                stepTracker.changeStepGoal();// здесь будет логика команды 2
-            } else if (i == 3) {
-               stepTracker.printStatistics(); // здесь будет логика команды 3
-            } else if (i == 4) {
-                System.out.println("Пока!");
-                scanner.close();
-                return;
-            } else {
-                System.out.println("Такой команды нет");
+            switch (i) {
+                case 1 -> stepTracker.addNewNumberStepsPerDay();
+                case 2 -> stepTracker.changeStepGoal();
+                case 3 -> stepTracker.printStatistics();
+                case 0 -> {
+                    System.out.println("Пока!");
+                    scanner.close();
+                    return;
+                }
+                default -> System.out.println("Такой команды нет");
+            }
             }
         }
-    }
 
     static void printMenu() {
               System.out.println("Что вы хотите сделать?");

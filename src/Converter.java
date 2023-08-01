@@ -1,14 +1,12 @@
 public class Converter {
-    int stepLength = 75;
-    int kal = 50;
-    int kalToKkal = 1000;
-    void convertToKm(int steps) { //Конвертация общего количества шагов в км.
-        int km = steps * stepLength / 100000;
-        System.out.println("Вы прошли " + km + " километров");
+    int ONE_STEP = 75;
+    int KAL_STEP = 50;
+    int KAL_TO_KKAL = 1000;
+    int convertToKm(int steps) { //Конвертация общего количества шагов в км.
+        return (steps * ONE_STEP / 100000);
     }
 
-    void convertStepsToKilocalories(int steps) { // Подсчёт общего значения количества килокалорий
-        int kkal = steps * kal / kalToKkal;
-        System.out.println("Вы потратили " + kkal + " килокалорий");
+    int convertStepsToKilocalories(int steps) { // Подсчёт общего значения количества килокалорий
+        return (steps * KAL_STEP / KAL_TO_KKAL);
     }
 }
